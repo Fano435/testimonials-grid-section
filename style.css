@@ -1,0 +1,158 @@
+@font-face {
+  font-family: Barlow;
+  src: url(Barlow_Semi_Condensed/BarlowSemiCondensed-Medium.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  min-height: 100vh;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  background: hsl(210, 46%, 95%);
+}
+body .wrapper {
+  padding: 4rem 8rem;
+}
+
+.grid-container {
+  min-height: 24rem;
+  display: grid;
+  grid-template-areas: "card-1 card-1 card-2 card-5" "card-3 card-4 card-4 card-5";
+  grid-template-rows: auto auto;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.grid-container .card {
+  border-radius: 8px;
+  padding: 1.8rem;
+}
+.grid-container .card .top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.grid-container .card .top img {
+  border-radius: 50%;
+  height: 30px;
+  border: 3px solid rgba(207, 207, 207, 0.5);
+}
+.grid-container .card .top span {
+  opacity: 50%;
+}
+.grid-container .card .bottom {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 20px;
+}
+.grid-container .card .bottom h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.grid-container .card .bottom .review {
+  color: rgba(255, 255, 255, 0.7);
+}
+.grid-container #item-1 {
+  grid-area: card-1;
+  background: hsl(263, 55%, 52%);
+  color: white;
+  animation: slide-from-left 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.grid-container #item-2 {
+  grid-area: card-2;
+  background: hsl(217, 19%, 35%);
+  color: white;
+  animation: slide-down 2s cubic-bezier(0.175, 0.885, 0.32, 1.25);
+}
+.grid-container #item-3 {
+  grid-area: card-3;
+  background: white;
+  color: hsl(217, 19%, 35%);
+  animation: appear 2s ease;
+}
+.grid-container #item-3 .review {
+  color: rgba(72, 85, 106, 0.7);
+}
+.grid-container #item-4 {
+  grid-area: card-4;
+  background: hsl(219, 29%, 14%);
+  color: white;
+  animation: scale 2.6s;
+}
+.grid-container #item-5 {
+  grid-area: card-5;
+  background: white;
+  color: hsl(217, 19%, 35%);
+  animation: slide-from-right-slow 2s ease-in-out;
+}
+.grid-container #item-5 .review {
+  color: rgba(72, 85, 106, 0.7);
+}
+
+@keyframes slide-from-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes appear {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+@keyframes slide-from-right-slow {
+  from {
+    transform: translateX(50%);
+  }
+  10% {
+    transform: translateX(50%);
+  }
+  70% {
+    transform: translateX(-3%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes scale {
+  from {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@media only screen and (max-width: 768px) {
+  body .wrapper {
+    padding: 4rem 2rem;
+  }
+  .grid-container {
+    grid-template-areas: "card-1" "card-2" "card-3" "card-4" "card-5";
+    grid-template-columns: 1fr;
+  }
+}/*# sourceMappingURL=style.css.map */
